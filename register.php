@@ -35,6 +35,16 @@ if(isset($_POST['submit'])) {
 
         $password = md5($_POST['password']);
 
+        if(! preg_match('/^(?=.*\d)(?=.*?[a-zA-Z])(?=.*?[\w_].{6,10}$/', $password)) {
+
+            $errors['password'] = 'Password Is Not Valid';
+
+        }else {
+
+            // echo '????';
+
+        }
+
     }
 
     if(empty($_POST['passwordrep'])) {
@@ -43,7 +53,7 @@ if(isset($_POST['submit'])) {
 
     }else {
 
-        $passwordRep = htmlspecialchars($_POST['passwordrep']);
+        $passwordRep = md5($_POST['passwordrep']);
 
         if($passwordRep !== $password) {
 
