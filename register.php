@@ -1,5 +1,9 @@
 <?php
 
+$userName = $password = $passwordRep = '';
+
+
+
 $errors = ['username' => '', 'password' => '', 'passwordrep' => ''];
 
 if(isset($_POST['submit'])) {
